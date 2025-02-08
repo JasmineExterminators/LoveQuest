@@ -48,7 +48,20 @@ async function run() {
         const insertedUser = await users.findOne({ _id: result.insertedId });
         console.log('Inserted User:', insertedUser);
   
-        res.json({ message: 'User data received and stored successfully', user: insertedUser });
+        // res.json({ message: 'User data received and stored successfully', user: insertedUser });
+        
+        //MATCHING ALGORITHM
+        const match = await users.findOne({ wantGender: sexId });
+        console.log('Match:', match);
+        const matchName = match.firstName;
+        console.log('Match Name:', matchName);
+
+        res.json({ 
+            message: 'User data received and stored successfully', 
+            user: insertedUser,
+            match: { wantGender: matchName } // Include the parsed match data in the response
+        });
+
     });
   
     app.listen(port, () => {

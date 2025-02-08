@@ -41,10 +41,10 @@
             <label for="major">Major: </label>
             <input type="text" id="major" name="major">
 
-            <label for="wantGender">Interested in (guys/girls/all): </label>
+            <label for="wantGender">Interested in (guy/girl/any): </label>
             <input type="text" id="wantGender" name="wantGender">
 
-            <label for="sexId">My Sexual Identity (others/guy/girl): </label>
+            <label for="sexId">My Sexual Identity (any/guy/girl): </label>
             <input type="text" id="sexId" name="sexId">
 
             <label for="mbti">MBTI: </label>
@@ -59,7 +59,7 @@
             <label for="interests">Interests (separate by comma): </label>
             <input type="text" id="interests" name="interests">
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit and Embark on a Love Quest!">
         </form>
     </div>
 </main>
@@ -100,6 +100,9 @@
             },
             body: JSON.stringify({ firstName, lastName, school, major, wantGender, sexId, mbti, hogHouse, introExtro, interests })
         })
+
+        // THIS PART STARTS MATCHING!!!!!!!!!!!!!
+
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
