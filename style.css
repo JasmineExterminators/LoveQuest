@@ -68,6 +68,11 @@ footer {
     text-align: center;
     display:block;
     margin-top:30px;
+    font-size: 100px;
+    color: #FF9B54;
+    background-color: #720026;
+    padding-top:50px;
+    padding-bottom:50px;
 }
 
 /* Style the button that is used to open and close the collapsible content */
