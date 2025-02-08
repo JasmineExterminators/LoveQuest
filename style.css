@@ -35,7 +35,7 @@ main {
 }
 .box {
     width: 100vw;
-    height: 400px;
+    height: 1300px;
     background-color: #FFE9D9; /* Background color */
     padding: 20px;              /* Space inside the box */
     text-align: left;         /* Center the text inside the box */
