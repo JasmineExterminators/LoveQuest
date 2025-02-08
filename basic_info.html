@@ -126,23 +126,47 @@
                             <h4 class="text-center">Basic Personal Info</h4>
                             <form id="basicInfoForm">
                                 <div class="mb-3">
-                                    <label class="form-label">Name:</label>
-                                    <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" id="fname" name="fname" class="form-control">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">School:</label>
-                                    <input type="text" id="school" class="form-control" placeholder="Enter your school">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" id="lname" name="lname" class="form-control" >
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Major:</label>
-                                    <input type="text" id="major" class="form-control" placeholder="Enter your major">
+                                    <label class="form-label">School Name</label>
+                                    <input type="text" id="school" name="school" class="form-control">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Birthday:</label>
-                                    <input type="date" id = "bday" class="form-control">
-                                </div>'
+                                    <label class="form-label">Major</label>
+                                    <input type="text" id="major" name="major" class="form-control">
+                                </div>
                                 <div class="mb-3">
-                                    <input type="submitInfo" value="Submit">
+                                    <label class="form-label">Interested in (guys/girls/all)</label>
+                                    <input type="text" id="wantGender" name="wantGender" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Sexual Identity (others/guy/girl)</label>
+                                    <input type="text" id="sexId" name="sexId" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">MBTI</label>
+                                    <input type="text" id="mbti" name="mbti" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Hogwarts House</label>
+                                    <input type="text" id="hogHouse" name="hogHouse" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">I'm interested in an (introverted/extroverted) match</label>
+                                    <input type="text" id="introExtro" name="introExtro" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Interests (separate by comma)</label>
+                                    <input type="text" id="interests" name="interests" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="submit" value="Submit">
                                 </div>
                             </form>
                         </div>
@@ -168,6 +192,37 @@
         </div>
     </div>
     <script src="basic_info.js">
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Get the input values
+        const firstName = document.getElementById('fname').value;
+        const lastName = document.getElementById('lname').value;
+        const school = document.getElementById('school').value;
+        const major = document.getElementById('major').value;
+        const wantGender = document.getElementById('wantGender').value;
+        const sexId = document.getElementById('sexId').value;
+        const mbti = document.getElementById('mbti').value;
+        const hogHouse = document.getElementById('hogHouse').value;
+        const introExtro = document.getElementById('introExtro').value;
+        const interests = document.getElementById('interests').value;
+    
+        // Log the values to the console (or handle them as needed)
+        console.log('First Name:', firstName);
+        console.log('Last Name:', lastName);
+
+        // Send the data to your server using fetch
+        fetch('http://localhost:5500/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ firstName, lastName, school, major, wantGender, sexId, mbti, hogHouse, introExtro, interests })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    });
     </script>
 </body>
 
