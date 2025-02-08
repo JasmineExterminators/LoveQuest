@@ -29,7 +29,7 @@ async function run() {
   try {
     // Handle the POST request
     app.post('/submit', async (req, res) => {
-        const { firstName, lastName } = req.body;
+        const { firstName, lastName, school, major, wantGender, sexId, mbti, hogHouse, introExtro, interests } = req.body;
         console.log('First Name:', firstName);
         console.log('Last Name:', lastName);
   
@@ -40,7 +40,7 @@ async function run() {
         console.log("database");
         const users = database.collection("users");
         console.log("users");
-        const newUser = { firstName, lastName };
+        const newUser = { firstName, lastName, school, major, wantGender, sexId, mbti, hogHouse, introExtro, interests };
         const result = await users.insertOne(newUser);
         console.log(`New user created with the following id: ${result.insertedId}`);
   
