@@ -58,6 +58,15 @@ function displayDateIdeas(ideas) {
     console.log(idea);
     if(idea.includes("  ###")){
         console.log("found date description");
+        const descriptionDiv = document.createElement('div');
+        descriptionDiv.setAttribute("id", "divID");
+        descriptionDiv.className = "content";
+
+        var description = document.createElement("p");
+        var node = document.createTextNode(idea.substring(5, idea.length-2));
+        description.appendChild(node);
+
+        descriptionDiv.appendChild(description);
     }
 
     if(idea.includes("- ***")){
@@ -66,14 +75,13 @@ function displayDateIdeas(ideas) {
         const newButton = document.createElement('button');
         newButton.setAttribute("id", 'buttonID');
         newButton.textContent = idea.substring(5, idea.length-2);
+        newButton.className = "collapsible";
         document.body.appendChild(newButton);
         const listItem = document.createElement("li");
         listItem.textContent = idea.substring(5, idea.length-2);
         ideasList.appendChild(listItem);
     }
 
-    const buttons = document.getElementById("buttonID");
-    buttons.className = "collapsible";
   });
 }
 
@@ -85,6 +93,23 @@ async function postQuests() {
   if (ideas) {
     displayDateIdeas(ideas);
   }
+
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      console.log("CLICKEDDD");
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
 };
+
 
 postQuests();
