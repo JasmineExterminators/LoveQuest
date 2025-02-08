@@ -1,4 +1,3 @@
-
 body {
     font-family: Georgia, sans-serif;
     margin: 0;
@@ -75,6 +74,67 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #DD8749;
 }
+
+/*Profile*/
+/*
+title
+profile-pic
+profile-info
+details
+basic-info, compatability
+
+*/
+.profile-card {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    /* background: white; */
+    font-family: Verdana;
+    color: darkgrey;
+    padding: 30px;
+}
+.profile-info {
+    display: flex;
+    font-size: 30px;
+}
+.title{
+    color: black;
+}
+.details {
+    margin-left: 30px;
+    padding: 30px;
+}
+.basic-info {
+    display: flex;
+    font-size: 20px;
+}
+.personal-info {
+    padding: 30px;
+}
+.actions {
+    padding: 30px;
+}
+.compatibility {
+    padding: 30px;
+}
+#percentage {
+    font-size: 30px;
+    padding: 0px;
+}
+button {
+    color: darkGrey;
+    border: none;
+    padding: 20px;
+    margin-left: 0;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 200px;
+    text-align: left;
+}
+
+
+
 
 .date-ideas {
     display: flex;
