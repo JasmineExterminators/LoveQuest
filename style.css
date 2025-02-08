@@ -9,11 +9,11 @@ body {
 header {
     background-color: #720026;
     color: #FF9B54;
-    padding: 100px;
+    padding: 30px;
     text-align: center;
-    font-size: 50px;
+    font-size: 100px;
     margin-right: 50vw;
-    margin-bottom: 50vh;
+    margin-bottom: 30px;
 }
 main {
     padding: 0px;
@@ -24,15 +24,63 @@ main {
     font-size: 18px;
 }
 .my-quests {
-    margin-left: 70vw;
+    margin-left: 80vw;
 }
-.sign-in{
-    margin-left: 5vw;
+.sign-in {
+    font-family: Georgia;
+    color: #FF9B54;
+    font-size: 40px;
 }
-#date-ideas {
+.subheader {
+    font-size: 35px;
+}
+.box {
+    width: 100vw;
+    height: 400px;
+    background-color: #FFE9D9; /* Background color */
+    padding: 20px;              /* Space inside the box */
+    text-align: left;         /* Center the text inside the box */
+    box-sizing: border-box;     /* Include padding in width/height */
+    margin: 50px auto; /*space between the header and box*/
+    font-size: 30px;
+    color: #720026;
+}
+/*form */
+/* Input fields */
+form {
+    display: flex;
+    flex-direction: column;  /* Arrange inputs vertically */
+    gap: 10px;  /* Adds space between each input field */
+    align-items: flex-start;  /* Align labels and inputs to the left */
+}
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners for the input fields */
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+input[type="submit"] {
+    font-family: Georgia, sans-serif;
+    padding: 15px;
+    background-color: #FF9B54;
+    color: white;
+    border: none;
+    border-radius: 10px; /* Rounded corners for the submit button */
+    font-size: 16px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #DD8749;
+}
+
+.date-ideas {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    font-size: 12px;
 }
 .idea-card {
     background-color: white;
