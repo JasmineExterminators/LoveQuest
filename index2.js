@@ -56,9 +56,10 @@ async function run() {
       });
     } catch (err) {
         console.error(err);
-    } finally {
-        // Ensures that the client will close when you finish/error
-        await client.close();
+    // } finally {
+    //     // Ensures that the client will close when you finish/error
+    //     await client.close();
+    // }
     }
 }
 
