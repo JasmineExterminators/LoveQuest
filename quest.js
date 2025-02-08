@@ -62,6 +62,10 @@ function displayDateIdeas(ideas) {
 
     if(idea.includes("- ***")){
         console.log("found date idea");
+
+        const newButton = document.createElement('button');
+        newButton.textContent = idea.substring(5, idea.length-2);
+        document.body.appendChild(newButton);
         const listItem = document.createElement("li");
         listItem.textContent = idea.substring(5, idea.length-2);
         ideasList.appendChild(listItem);
