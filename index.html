@@ -34,8 +34,32 @@
             
             <label for="lname">Last name: </label>
             <input type="text" id="lname" name="lname">
+
+            <label for="school">School: </label>
+            <input type="text" id="school" name="school">
+
+            <label for="major">Major: </label>
+            <input type="text" id="major" name="major">
+
+            <label for="wantGender">Interested in (guy/girl/any): </label>
+            <input type="text" id="wantGender" name="wantGender">
+
+            <label for="sexId">My Sexual Identity (any/guy/girl): </label>
+            <input type="text" id="sexId" name="sexId">
+
+            <label for="mbti">MBTI: </label>
+            <input type="text" id="mbti" name="mbti">
+
+            <label for="hogHouse">Hogwarts House: </label>
+            <input type="text" id="hogHouse" name="hogHouse">
             
-            <input type="submit" value="Submit">
+            <label for="introExtro">I'm interested in an (introverted/extroverted) match: </label>
+            <input type="text" id="introExtro" name="introExtro">
+
+            <label for="interests">Interests (separate by comma): </label>
+            <input type="text" id="interests" name="interests">
+
+            <input type="submit" value="Submit and Embark on a Love Quest!">
         </form>
     </div>
 </main>
@@ -55,6 +79,14 @@
         // Get the input values
         const firstName = document.getElementById('fname').value;
         const lastName = document.getElementById('lname').value;
+        const school = document.getElementById('school').value;
+        const major = document.getElementById('major').value;
+        const wantGender = document.getElementById('wantGender').value;
+        const sexId = document.getElementById('sexId').value;
+        const mbti = document.getElementById('mbti').value;
+        const hogHouse = document.getElementById('hogHouse').value;
+        const introExtro = document.getElementById('introExtro').value;
+        const interests = document.getElementById('interests').value;
     
         // Log the values to the console (or handle them as needed)
         console.log('First Name:', firstName);
@@ -66,8 +98,11 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ firstName, lastName })
+            body: JSON.stringify({ firstName, lastName, school, major, wantGender, sexId, mbti, hogHouse, introExtro, interests })
         })
+
+        // THIS PART STARTS MATCHING!!!!!!!!!!!!!
+
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
