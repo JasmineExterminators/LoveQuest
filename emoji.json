@@ -1,0 +1,54 @@
+{
+  "hogwarts_house": {
+    "gryffindor": "🔴🦁",
+    "hufflepuff": "🟡🦡",
+    "ravenclaw": "🔵🐦‍⬛",
+    "slytherin": "🟢🐍"
+  },
+  "zodiac_sign": {
+    "aries": "♈",
+    "taurus": "♉",
+    "gemini": "♊",
+    "cancer": "♋",
+    "leo": "♌",
+    "virgo": "♍",
+    "libra": "♎",
+    "scorpio": "♏",
+    "sagittarius": "♐",
+    "capricorn": "♑",
+    "aquarius": "♒",
+    "pisces": "♓"
+  },
+  "mbti": {
+    "intj": "🧠🔬",
+    "intp": "🤔💡",
+    "entj": "📈🎯",
+    "entp": "💭💬",
+    "infj": "🌿✨",
+    "infp": "🎨🌊",
+    "enfj": "❤️🔥",
+    "enfp": "🌈🎉",
+    "istj": "📚✅",
+    "isfj": "🛡️💖",
+    "estj": "🏆📋",
+    "esfj": "🎭🤝",
+    "istp": "🛠️🔧",
+    "isfp": "🎸🎨",
+    "estp": "🏍️🎲",
+    "esfp": "🎤🎶"
+  },
+  "intro_extro_match": {
+    "introverted": "🌙📖",
+    "extroverted": "🌞🎉"
+  },
+  "sexual_identity": {
+    "guy": "♂️",
+    "girl": "♀️",
+    "others": "⚧️"
+  },
+  "interested_in": {
+    "guys": "👨",
+    "girls": "👩",
+    "all": "🌍❤️"
+  }
+}
