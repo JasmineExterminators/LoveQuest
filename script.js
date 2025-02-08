@@ -12,22 +12,19 @@ app.post('/api/query', async (req, res) => {
   const userInput = req.body.userInput;
 
   try {
-    const response = await axios.post(
-      'https://api.perplexity.ai/chat/completions',
-      {
-        model: 'mistral-7b-instruct',
-        messages: [
-          { role: 'system', content: 'Be precise and concise.' },
-          { role: 'user', content: userInput },
-        ],
+    const options = {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer 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',
+        'Content-Type': 'application/json'
       },
-      {
-        headers: {
-          Authorization: `Bearer ${PERPLEXITY_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+      body: '{"model":"sonar","frequency_penalty":1,"messages":[{"role":"user","content":"generate cute sustainable date ideas"}]}'
+    };
+    
+    fetch('https://api.perplexity.ai/chat/completions', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
 
     res.json(response.data);
   } catch (error) {
