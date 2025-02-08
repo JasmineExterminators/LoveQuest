@@ -1,0 +1,16 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "package info for quest",
+  "main": "quest.js",
+  "type": "module",
+  "scripts": {
+    "test": "init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Quest"
+  },
+  "author": "",
+  "license": "ISC"
+}

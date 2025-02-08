@@ -1,17 +1,15 @@
 // Replace with your actual Perplexity API key
-// const API_KEY = "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";
-
-console.log("hi");
+const API_KEY = "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";
 
 // Select DOM elements
-// const fetchButton = document.getElementById("fetchIdeasButton");
+const fetchButton = document.getElementById("fetchIdeasButton");
 const ideasList = document.getElementById("dateIdeasList");
 
 // Function to fetch date ideas from the Perplexity API
 async function fetchDateIdeas() {
   const url = "https://api.perplexity.ai/chat/completions";
   const headers = {
-    "Authorization": `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+    "Authorization": `Bearer ${API_KEY}`,
     "Content-Type": "application/json",
   };
 
@@ -44,7 +42,7 @@ async function fetchDateIdeas() {
     return result.choices[0].message.content;
   } catch (error) {
     console.error("Failed to fetch date ideas:", error);
-    alert("Failed to fetch date ideas. Check the console for more details.");
+    //alert("Failed to fetch date ideas. Check the console for more details.");
   }
 }
 
@@ -69,21 +67,22 @@ function displayDateIdeas(ideas) {
         listItem.textContent = idea.substring(5, idea.length-2);
         ideasList.appendChild(listItem);
     }
+    // if (idea.trim()) {
+    //   const listItem = document.createElement("li");
+    //   listItem.textContent = idea.trim();
+    //   ideasList.appendChild(listItem);
+    // }
   });
 }
 
 // Add event listener to the button
-// fetchButton.addEventListener("click", async () => {
-//     console.log("button pressed");
-//   const ideas = await fetchDateIdeas();
-//   console.log("ideas fetched");
-//   if (ideas) {
-//     displayDateIdeas(ideas);
-//   }
-// });
+async function postQuests() {
+    console.log("button pressed");
+  const ideas = await fetchDateIdeas();
+  console.log("ideas fetched");
+  if (ideas) {
+    displayDateIdeas(ideas);
+  }
+};
 
-const ideas = fetchDateIdeas();
-console.log("ideas fetched");
-if (ideas) {
-displayDateIdeas(ideas);
-}
+postQuests();
