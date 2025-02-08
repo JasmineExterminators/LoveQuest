@@ -104,6 +104,10 @@ footer {
     background-color: #ccc;
   }
 
+  /* .active, .heart_button:hover {
+    background-color: #ccc;
+  } */
+
   #buttonID{
     display:inline;
     margin:2px;
@@ -142,6 +146,7 @@ footer {
     border-radius: 100px;
     margin-right:10px;
     margin-top:20px;
+    background-color: white;
   }
 
   .material-symbols-outlined{

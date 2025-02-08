@@ -108,15 +108,6 @@ function displayDateIdeas(ideas) {
   });
 }
 
-// const hearts = postQuests.querySelector("material-symbols-outlined");
-// ratings.forEach(rating => {
-//   const button = rating.querySelector("heart-selected");
-
-//   button.addEventListener("click", async () => {
-
-//   })
-// })
-
 
 async function postQuests() {
 
@@ -141,7 +132,7 @@ async function postQuests() {
       const siblings2 = [...document.querySelectorAll('.date_idea_div')];
         const index = siblings2.indexOf(par)
         console.log(index);
-        var content = siblings[index-1] || null;
+        var content = siblings[index] || null;
 
       
       // var content = content1.nextElementSibling;
@@ -157,6 +148,28 @@ async function postQuests() {
         content.style.display = "block";
         this.style.borderBottomLeftRadius = '0px';
         this.style.borderBottomRightRadius = '0px';
+      }
+    });
+  }
+
+
+
+  var hearts = document.getElementsByClassName("heart_button");
+  var i;
+
+  for (i = 0; i < hearts.length; i++) {
+
+    hearts[i].addEventListener("click", function () {
+      console.log("CLICKEDDD");
+      // this.classList.toggle("active");
+      console.log(this.style.backgroundColor);
+      // this.style.backgroundColor = "rgb(255, 255, 255)";
+
+      if (this.style.backgroundColor === "rgb(246, 86, 147)") {
+        this.style.backgroundColor = "rgb(255, 255, 255)";
+
+      } else {
+        this.style.backgroundColor = "rgb(246, 86, 147)";
       }
     });
   }
