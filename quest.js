@@ -15,15 +15,15 @@ async function fetchDateIdeas() {
   const data = {
     method: 'POST',
     model: "sonar",
-    frequency_penalty:1,
-    "messages":[{"role":"user","content":"generate a list of cute sustainable date ideas with descriptions. do not have an intro or conclusion just create the list. start each date idea with the characters *** and each description with the characters ###. also do not include any reference numbers at the end of descriptions"}]
-    
+    frequency_penalty: 1,
+    "messages": [{ "role": "user", "content": "generate a list of cute sustainable date ideas with descriptions. do not have an intro or conclusion just create the list. start each date idea with the characters *** and each description with the characters ###. also do not include any reference numbers at the end of descriptions" }]
+
   };
 
   fetch('https://api.perplexity.ai/chat/completions', data)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
 
   try {
     // Fetch data from the Perplexity API
@@ -45,6 +45,12 @@ async function fetchDateIdeas() {
   }
 }
 
+function getNextElementWithIdOrClass(startElement, selector) {
+  const siblings = [...document.querySelectorAll(selector)];
+  const index = siblings.indexOf(startElement)
+  return siblings[index + 1] || null;
+}
+
 // Function to display fetched date ideas on the webpage
 function displayDateIdeas(ideas) {
   // Clear any existing ideas
@@ -56,34 +62,47 @@ function displayDateIdeas(ideas) {
 
   listOfIdeas.forEach((idea) => {
     console.log(idea);
-    if(idea.includes("  ###")){
-        console.log("found date description");
+    if (idea.includes("  ###")) {
+      console.log("found date description");
 
-        const descriptionDiv = document.createElement('div');
-        document.body.appendChild(descriptionDiv);
-        descriptionDiv.setAttribute("id", "divID");
-        descriptionDiv.className = "content";
+      const descriptionDiv = document.createElement('div');
+      document.body.appendChild(descriptionDiv);
+      descriptionDiv.setAttribute("id", "divID");
+      descriptionDiv.className = "content";
 
-        var description = document.createElement("p");
-        var node = document.createTextNode(idea.substring(5));
-        description.appendChild(node);
+      var description = document.createElement("p");
+      var node = document.createTextNode(idea.substring(5));
+      description.appendChild(node);
 
-        descriptionDiv.appendChild(description);
+      descriptionDiv.appendChild(description);
 
-        
+
     }
 
-    if(idea.includes("- ***")){
-        console.log("found date idea");
+    if (idea.includes("- ***")) {
+      console.log("found date idea");
 
-        const newButton = document.createElement('button');
-        newButton.setAttribute("id", 'buttonID');
-        newButton.textContent = idea.substring(5, idea.length-2);
-        newButton.className = "collapsible";
-        document.body.appendChild(newButton);
-        //const listItem = document.createElement("li");
-        //listItem.textContent = idea.substring(5, idea.length-2);
-        //ideasList.appendChild(listItem);
+      const newDiv = document.createElement('div');
+      newDiv.className = "date_idea_div";
+
+      const newButton = document.createElement('button');
+      newButton.setAttribute("id", 'buttonID');
+      newButton.textContent = idea.substring(5, idea.length - 2);
+      newButton.className = "collapsible";
+
+      const heartButton = document.createElement('button');
+      heartButton.className = "heart_button";
+
+      const heartSpan = document.createElement('span');
+      heartSpan.className = "material-symbols-outlined";
+      heartSpan.textContent = "favorite";
+
+
+      heartButton.appendChild(heartSpan);
+      newDiv.appendChild(heartButton);
+      newDiv.appendChild(newButton);
+      document.body.appendChild(newDiv);
+
     }
 
   });
@@ -91,7 +110,7 @@ function displayDateIdeas(ideas) {
 
 
 async function postQuests() {
-    console.log("button pressed");
+
   const ideas = await fetchDateIdeas();
   console.log("ideas fetched");
   if (ideas) {
@@ -102,20 +121,55 @@ async function postQuests() {
   var i;
 
   for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
+    // var content = getNextElementWithIdOrClass(coll[i], ".content");
+    coll[i].addEventListener("click", function () {
       console.log("CLICKEDDD");
       this.classList.toggle("active");
+
+      var par = (this.parentElement);
+
+      const siblings = [...document.querySelectorAll('#divID')];
+      const siblings2 = [...document.querySelectorAll('.date_idea_div')];
+        const index = siblings2.indexOf(par)
+        console.log(index);
+        var content = siblings[index] || null;
+
       
-      var content = this.nextElementSibling;
+      // var content = content1.nextElementSibling;
+
+      console.log(content.id);
+
       if (content.style.display === "block") {
         content.style.display = "none";
         this.style.borderBottomLeftRadius = '15px';
         this.style.borderBottomRightRadius = '15px';
-        
+
       } else {
         content.style.display = "block";
         this.style.borderBottomLeftRadius = '0px';
         this.style.borderBottomRightRadius = '0px';
+      }
+    });
+  }
+
+
+
+  var hearts = document.getElementsByClassName("heart_button");
+  var i;
+
+  for (i = 0; i < hearts.length; i++) {
+
+    hearts[i].addEventListener("click", function () {
+      console.log("CLICKEDDD");
+      // this.classList.toggle("active");
+      console.log(this.style.backgroundColor);
+      // this.style.backgroundColor = "rgb(255, 255, 255)";
+
+      if (this.style.backgroundColor === "rgb(246, 86, 147)") {
+        this.style.backgroundColor = "rgb(255, 255, 255)";
+
+      } else {
+        this.style.backgroundColor = "rgb(246, 86, 147)";
       }
     });
   }
