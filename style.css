@@ -35,7 +35,7 @@ main {
 }
 .box {
     width: 100vw;
-    height: 400px;
+    height: 1300px;
     background-color: #FFE9D9; /* Background color */
     padding: 20px;              /* Space inside the box */
     text-align: left;         /* Center the text inside the box */
@@ -73,6 +73,11 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     background-color: #DD8749;
+}
+.style1{
+    background-color:red;
+    color:white;
+    font-size:44px;
 }
 
 
@@ -129,10 +134,22 @@ button {
     margin-left: 0;
     font-size: 20px;
     cursor: pointer;
+    transition-duration: 0.4s;
     border-radius: 6px;
     width: 200px;
     text-align: left;
 }
+button:hover {
+    background-color:#FFC2D7;
+    color:white;
+}
+.like-btn:focus {
+    background-color: #FFC2D7;
+}
+.rose-btn:focus {
+    background-color: #FFC2D7;
+}
+
 
 
 

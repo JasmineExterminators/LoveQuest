@@ -15,3 +15,6 @@ document.getElementById("zodiac").textContent = `♌ ${zodiac}`;
 document.getElementById("mbti").textContent = `🧩 ${mbti}`;
 document.getElementById("percentage").textContent = `💖${percentage}% Match`;
 
+function change_css(){
+    document.getElementById('foo').setAttribute("class", "style1");
+}
