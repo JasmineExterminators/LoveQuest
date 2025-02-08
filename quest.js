@@ -2,7 +2,6 @@
 const API_KEY = "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";
 
 // Select DOM elements
-const fetchButton = document.getElementById("fetchIdeasButton");
 const ideasList = document.getElementById("dateIdeasList");
 
 // Function to fetch date ideas from the Perplexity API
@@ -67,15 +66,10 @@ function displayDateIdeas(ideas) {
         listItem.textContent = idea.substring(5, idea.length-2);
         ideasList.appendChild(listItem);
     }
-    // if (idea.trim()) {
-    //   const listItem = document.createElement("li");
-    //   listItem.textContent = idea.trim();
-    //   ideasList.appendChild(listItem);
-    // }
   });
 }
 
-// Add event listener to the button
+
 async function postQuests() {
     console.log("button pressed");
   const ideas = await fetchDateIdeas();
