@@ -64,13 +64,24 @@ footer {
 } */
 
 
+#quest_header{
+    text-align: center;
+    display:block;
+    margin-top:30px;
+    font-size: 100px;
+    color: #FF9B54;
+    background-color: #720026;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     background-color: #eee;
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 80%;
+    width: 75%;
     border: none;
     text-align: left;
     outline: none;
@@ -78,8 +89,14 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top:10px;
+    margin-top:30px;
     font-family: Georgia, sans-serif;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    text-align: center;
+    font-size:30px;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -96,6 +113,10 @@ footer {
     background-color: #f1f1f1;
     margin-left:auto;
     margin-right:auto;
-    width: 80vw;
+    width: 71.8vw;
     margin-bottom:30px;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    text-align: center;
+    font-size:25px;
   }
