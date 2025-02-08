@@ -1,0 +1,20 @@
+{
+  "mbti_matches": {
+    "intj": ["entp", "entj", "intp"],
+    "intp": ["entp", "intj", "infj"],
+    "entj": ["intj", "entp", "entp"],
+    "entp": ["intp", "entj", "infj"],
+    "infj": ["enfp", "entp", "infp"],
+    "infp": ["enfj", "infj", "entp"],
+    "enfj": ["infp", "infj", "entp"],
+    "enfp": ["infj", "intp", "enfj"],
+    "istj": ["estp", "isfj", "entp"],
+    "isfj": ["esfp", "istj", "enfj"],
+    "estj": ["istp", "esfj", "entp"],
+    "esfj": ["isfj", "estp", "enfp"],
+    "istp": ["estj", "istp", "isfp"],
+    "isfp": ["esfp", "istp", "infp"],
+    "estp": ["istj", "esfj", "entp"],
+    "esfp": ["isfp", "esfj", "enfp"]
+  }
+}
