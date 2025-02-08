@@ -89,7 +89,7 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top:30px;
+    margin-top:50px;
     font-family: Georgia, sans-serif;
     border-top-left-radius:15px;
     border-top-right-radius:15px;
@@ -102,6 +102,11 @@ footer {
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .collapsible:hover {
     background-color: #ccc;
+  }
+
+  #buttonID{
+    display:inline;
+    margin:2px;
   }
   
   /* Style the collapsible content. Note: hidden by default */
@@ -119,4 +124,34 @@ footer {
     border-bottom-right-radius:15px;
     text-align: center;
     font-size:25px;
+  }
+
+  .material-symbols-outlined {
+        margin-right: 50px;
+        margin-left: 50px;
+        /* height: 50px; */
+  }
+
+  .date_idea_div{
+    display: flex;
+  justify-content: center;
+    /* margin:0, auto; */
+  }
+
+  .heart_button{
+    border-radius: 100px;
+    margin-right:10px;
+    margin-top:20px;
+  }
+
+  .material-symbols-outlined{
+    margin:19px;
+  }
+
+  #divID{
+    margin-right:133px;
+  }
+
+  #buttonID{
+    margin-top:20px;
   }
