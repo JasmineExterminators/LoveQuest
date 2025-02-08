@@ -94,12 +94,51 @@
             font-weight: bold;
             display: inline-block;
         }
-    </style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #720026;
+        padding: 8px 12px;
+        border: 2px solid #720026;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #720026;
+        color: #fff;
+    }
+</style>
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light px-4">
+
+    <nav class="navbar">
         <a class="navbar-brand" href="index.html">Love Quest</a>
+        <div class="nav-links">
+            <a href="quest.html">My Quests</a>
+            <a href="basic_info.html">My Info</a>
+            <a href="matched.html">My Match Profile</a>
+        </div>
     </nav>
     <div class="container-fluid">
         <div class="row">

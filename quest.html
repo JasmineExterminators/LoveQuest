@@ -9,16 +9,53 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite" />
 </head>
 
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #720026;
+    padding: 8px 12px;
+    border: 2px solid #720026;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    background-color: #720026;
+    color: #fff;
+  }
+</style>
+</head>
+
 <body>
 
-  <section class='text-medium'>
-    <h1 class='my-quests' id="link" hyperlink="index.html">
-      My Quest
-    </h1>
-    <h2 class='sign-in' id="link">
-      Sign in
-    </h2>
-  </section>
+  <nav class="navbar">
+    <a class="navbar-brand" href="index.html">Love Quest</a>
+    <div class="nav-links">
+      <a href="quest.html">My Quests</a>
+      <a href="basic_info.html">My Info</a>
+      <a href="matched.html">My Match Profile</a>
+    </div>
+  </nav>
 
   <h1 id="quest_header">Choose A Quest!</h1>
   <ul id="dateIdeasList"></ul>

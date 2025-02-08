@@ -5,16 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Quest</title>
     <link rel = 'stylesheet' href="style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #720026;
+        padding: 8px 12px;
+        border: 2px solid #720026;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #720026;
+        color: #fff;
+    }
+</style>
 </head>
 
 <body>
 
-    <section class = 'text-medium'>
-        <h1 class="my-quests">
-            <a href="quest.html" id="link">My Quests</a>
-        </h1>
-
-    </section>
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">Love Quest</a>
+        <div class="nav-links">
+            <a href="quest.html">My Quests</a>
+            <a href="basic_info.html">My Info</a>
+            <a href="matched.html">My Match Profile</a>
+        </div>
+    </nav>
 
 <header>
     <h3>Love Quest</h3>
