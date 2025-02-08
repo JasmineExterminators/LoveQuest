@@ -1,0 +1,64 @@
+
+body {
+    font-family: Georgia, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4F000B;
+    color: #FF9B54;
+}
+header {
+    background-color: #720026;
+    color: #FF9B54;
+    padding: 100px;
+    text-align: center;
+    font-size: 50px;
+    margin-right: 50vw;
+    margin-bottom: 50vh;
+}
+main {
+    padding: 0px;
+}
+.text-medium {
+    display: flex;
+    color: white;
+    font-size: 18px;
+}
+.my-quests {
+    margin-left: 70vw;
+}
+.sign-in{
+    margin-left: 5vw;
+}
+#date-ideas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.idea-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(100% / 3 - 20px);
+    box-sizing: border-box;
+}
+.idea-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+/* @media (max-width: 768px) {
+    .idea-card {
+        width: calc(100% / 2 - 20px);
+    }
+}
+@media (max-width: 480px) {
+    .idea-card {
+        width: calc(100% - 20px);
+    }
+} */
