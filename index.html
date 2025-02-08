@@ -27,6 +27,13 @@
     <section id="date-ideas">
         <!-- Dynamically generated date ideas will appear here -->
     </section>
+    <form id="userForm" action="/action_page.php">
+        <label for="fname">First name: </label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name: </label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
 </main>
 
 <footer>
@@ -35,3 +42,41 @@
 
 </body>
 </html>
+
+
+<script>
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        // Get the input values
+        const firstName = document.getElementById('fname').value;
+        const lastName = document.getElementById('lname').value;
+    
+        // Log the values to the console (or handle them as needed)
+        console.log('First Name:', firstName);
+        console.log('Last Name:', lastName);
+    
+        // You can now send these values to your server or use them as needed
+        // Example: Send the data to your server using fetch or XMLHttpRequest
+        // fetch('/your-server-endpoint', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({ firstName, lastName })
+        // }).then(response => response.json())
+        //   .then(data => console.log(data))
+        //   .catch(error => console.error('Error:', error));
+        // Send the data to your server using fetch
+        fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ firstName, lastName })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    });
+    </script>
