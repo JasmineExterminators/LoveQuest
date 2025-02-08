@@ -3,10 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Date Ideas Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        #date-ideas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .idea-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: calc(100% / 3 - 20px);
+            box-sizing: border-box;
+        }
+        .idea-card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .idea-card {
+                width: calc(100% / 2 - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .idea-card {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
 </head>
 <body>
-    
-    
+
+<header>
+    <h1>Date Ideas Generator</h1>
+    <p>Discover fresh and creative date ideas updated regularly!</p>
+</header>
+
+<main>
+    <section id="date-ideas">
+        <!-- Dynamically generated date ideas will appear here -->
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Date Ideas Generator. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
