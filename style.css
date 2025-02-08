@@ -70,11 +70,16 @@ footer {
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 80%;
     border: none;
     text-align: left;
     outline: none;
     font-size: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+    font-family: Georgia, sans-serif;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -86,6 +91,11 @@ footer {
   .content {
     padding: 0 18px;
     display: none;
+    
     overflow: hidden;
     background-color: #f1f1f1;
+    margin-left:auto;
+    margin-right:auto;
+    width: 80vw;
+    margin-bottom:30px;
   }

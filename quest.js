@@ -65,7 +65,7 @@ function displayDateIdeas(ideas) {
         descriptionDiv.className = "content";
 
         var description = document.createElement("p");
-        var node = document.createTextNode(idea.substring(5, idea.length-2));
+        var node = document.createTextNode(idea.substring(5));
         description.appendChild(node);
 
         descriptionDiv.appendChild(description);
