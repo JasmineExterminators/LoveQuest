@@ -58,7 +58,9 @@ function displayDateIdeas(ideas) {
     console.log(idea);
     if(idea.includes("  ###")){
         console.log("found date description");
+
         const descriptionDiv = document.createElement('div');
+        document.body.appendChild(descriptionDiv);
         descriptionDiv.setAttribute("id", "divID");
         descriptionDiv.className = "content";
 
@@ -67,6 +69,8 @@ function displayDateIdeas(ideas) {
         description.appendChild(node);
 
         descriptionDiv.appendChild(description);
+
+        
     }
 
     if(idea.includes("- ***")){
@@ -77,9 +81,9 @@ function displayDateIdeas(ideas) {
         newButton.textContent = idea.substring(5, idea.length-2);
         newButton.className = "collapsible";
         document.body.appendChild(newButton);
-        const listItem = document.createElement("li");
-        listItem.textContent = idea.substring(5, idea.length-2);
-        ideasList.appendChild(listItem);
+        //const listItem = document.createElement("li");
+        //listItem.textContent = idea.substring(5, idea.length-2);
+        //ideasList.appendChild(listItem);
     }
 
   });
