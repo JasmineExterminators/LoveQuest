@@ -105,11 +105,17 @@ async function postQuests() {
     coll[i].addEventListener("click", function() {
       console.log("CLICKEDDD");
       this.classList.toggle("active");
+      
       var content = this.nextElementSibling;
       if (content.style.display === "block") {
         content.style.display = "none";
+        this.style.borderBottomLeftRadius = '15px';
+        this.style.borderBottomRightRadius = '15px';
+        
       } else {
         content.style.display = "block";
+        this.style.borderBottomLeftRadius = '0px';
+        this.style.borderBottomRightRadius = '0px';
       }
     });
   }
