@@ -6,33 +6,38 @@
     <title>Love Quest</title>
     <link rel = 'stylesheet' href="style.css">
 </head>
+
 <body>
 
     <section class = 'text-medium'>
         <h1 class = 'my-quests' id="link">
             My Quests
         </h1>
-        <h2 class = 'sign-in' id="link">
-            Sign in
-        </h2>
     </section>
-    
+
 <header>
     <h3>Love Quest</h3>
-    <p>Discover fresh and creative date ideas updated regularly!</p>
+    <h4 class = 'subheader'>
+        Discover fresh and creative date ideas updated regularly!
+    </h4>
 </header>
 
 <main>
-    <section id="date-ideas">
-        <!-- Dynamically generated date ideas will appear here -->
-    </section>
-    <form id="userForm" action="/action_page.php">
-        <label for="fname">First name: </label>
-        <input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Last name: </label>
-        <input type="text" id="lname" name="lname"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="box">
+        <section class = 'sign-in'>
+            Sign In Here
+            <!-- Dynamically generated date ideas will appear here -->
+        </section>
+        <form id="userForm" action="/action_page.php">
+            <label for="fname">First name: </label>
+            <input type="text" id="fname" name="fname">
+            
+            <label for="lname">Last name: </label>
+            <input type="text" id="lname" name="lname">
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </main>
 
 <footer>
