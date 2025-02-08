@@ -1,12 +1,16 @@
 async function fetchDateIdeas() {
-    const response = await fetch('https://api.perplexity.ai/generate', {
+    console.log("Fetching date ideas...");
+    const response = await fetch('http://localhost:8080/generate', { // Proxy URL
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt: "Generate creative date ideas for February evenings." })
     });
+    console.log("Response received:", response);
     const data = await response.json();
+    console.log("Data fetched:", data);
     displayDateIdeas(data.ideas);
 }
+
 
 function displayDateIdeas(ideas) {
     const container = document.getElementById('date-ideas');
@@ -19,4 +23,6 @@ function displayDateIdeas(ideas) {
 }
 
 // Call the function periodically
-setInterval(fetchDateIdeas, 3600000); // Update every hour
+//setInterval(fetchDateIdeas, 36000); // Update every hour
+
+fetchDateIdeas();
