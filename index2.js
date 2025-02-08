@@ -24,13 +24,9 @@ const uri =
 // Create a new MongoClient
 const client = new MongoClient(uri);
 // Function to connect to the server
+
 async function run() {
   try {
-    // Establish and verify connection
-    await client.connect();
-    await client.db("admin").command({ ping: 1 });
-    console.log("Connected successfully to server");
-
     // Handle the POST request
     app.post('/submit', async (req, res) => {
         const { firstName, lastName } = req.body;
@@ -38,8 +34,12 @@ async function run() {
         console.log('Last Name:', lastName);
   
         // Insert the data into MongoDB
+        console.log("client");
+        await client.connect();
         const database = client.db("LoveQuest");
+        console.log("database");
         const users = database.collection("users");
+        console.log("users");
         const newUser = { firstName, lastName };
         const result = await users.insertOne(newUser);
         console.log(`New user created with the following id: ${result.insertedId}`);
@@ -56,9 +56,11 @@ async function run() {
       });
     } catch (err) {
         console.error(err);
-    }finally {
-    // Ensures that the client will close when you finish/error
-        await client.close();
-  }
+    // } finally {
+    //     // Ensures that the client will close when you finish/error
+    //     await client.close();
+    // }
+    }
 }
+
 run().catch(console.dir);
